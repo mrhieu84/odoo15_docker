@@ -1,0 +1,21 @@
+services:
+  odoo_container:
+    container_name: odoo_16
+    build:
+      context: .
+      dockerfile: Dockerfile            
+    ports:
+      - "9969:8069"   
+      - "9972:8072"  
+    volumes:
+      - ./custom-addons:/opt/odoo16/custom-addons/  
+      - ./logs:/var/log/odoo/
+      - ./config/odoo16.conf:/etc/odoo16.conf
+    restart: unless-stopped
+    networks:
+      - internal_shared_net
+    
+networks:
+  internal_shared_net: 
+    external: true
+
