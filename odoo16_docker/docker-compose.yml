@@ -11,6 +11,7 @@ services:
       - ./custom-addons:/opt/odoo16/custom-addons/  
       - ./logs:/var/log/odoo/
       - ./config/odoo16.conf:/etc/odoo16.conf
+      - ./filestore:/opt/odoo15/.local/share/Odoo/filestore
     restart: unless-stopped
     networks:
       - internal_shared_net
