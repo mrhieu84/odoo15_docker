@@ -64,6 +64,9 @@ RUN pip3 install wheel
 RUN pip3 install -r /opt/odoo15/odoo/requirements.txt 
 
 
+RUN mkdir -p /var/log/odoo && chmod -R 777 /var/log/odoo
+RUN mkdir -p /opt/odoo15/.local/share/Odoo && chmod -R 777 /opt/odoo15/.local/share/Odoo
+RUN mkdir -p /opt/odoo15/custom-addons && chmod -R 777 /opt/odoo15/custom-addons
 
 
 USER odoo15

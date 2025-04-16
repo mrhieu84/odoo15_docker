@@ -40,6 +40,9 @@ RUN sed -i 's/greenlet==1.1.2/greenlet==3.1.1/' /opt/odoo16/odoo/requirements.tx
 RUN pip3 install --no-cache-dir wheel
 RUN pip3 install --no-cache-dir -r /opt/odoo16/odoo/requirements.txt
 
+RUN mkdir -p /var/log/odoo && chmod -R 777 /var/log/odoo
+RUN mkdir -p /opt/odoo16/.local/share/Odoo && chmod -R 777 /opt/odoo16/.local/share/Odoo
+RUN mkdir -p /opt/odoo16/custom-addons && chmod -R 777 /opt/odoo16/custom-addons
 
 # Switch back to odoo16 user
 USER odoo16
