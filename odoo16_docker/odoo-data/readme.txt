@@ -1,1 +1,1 @@
-chmod -R 777 odoo-data
+need permission for odoo container write files in odoo-data: chmod -R 777 odoo-data
