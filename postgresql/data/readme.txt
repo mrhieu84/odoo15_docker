@@ -1,1 +1,0 @@
-Need allow postgres write files to folder data: sudo chmod -R 777 data
