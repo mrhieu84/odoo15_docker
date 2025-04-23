@@ -1,1 +1,1 @@
-sudo chmod 777 data/
+sudo chmod -R 777 data/
