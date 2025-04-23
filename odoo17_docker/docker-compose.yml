@@ -1,0 +1,24 @@
+services:
+  odoo_container:
+    container_name: odoo_17
+    build:
+      context: .
+      dockerfile: Dockerfile            
+    ports:
+      - "10069:8069"   
+      - "10072:8072"  
+    volumes:
+      - ./custom-addons:/opt/odoo17/custom-addons/  
+      - ./logs:/var/log/odoo/
+      - ./config/odoo17.conf:/etc/odoo17.conf
+      - ./odoo-data:/opt/odoo17/.local/share/Odoo/
+      - ./lib:/opt/odoo17/.local/lib
+      - ./bin:/opt/odoo17/.local/bin
+    restart: unless-stopped
+    networks:
+      - internal_shared_net
+    
+networks:
+  internal_shared_net: 
+    external: true
+
