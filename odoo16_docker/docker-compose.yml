@@ -12,6 +12,8 @@ services:
       - ./logs:/var/log/odoo/
       - ./config/odoo16.conf:/etc/odoo16.conf
       - ./odoo-data:/opt/odoo16/.local/share/Odoo/
+      - ./lib:/opt/odoo16/.local/lib
+      - ./bin:/opt/odoo16/.local/bin
     restart: unless-stopped
     networks:
       - internal_shared_net
