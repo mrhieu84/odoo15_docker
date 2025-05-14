@@ -1,1 +1,1 @@
-odoo logs
+odoo logs chmod -R 777 logs
