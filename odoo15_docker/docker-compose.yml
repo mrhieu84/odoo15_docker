@@ -3,7 +3,7 @@ services:
     container_name: odoo_15
     build:
       context: .
-      dockerfile: Dockerfile            
+      dockerfile: Dockerfile
     ports:
       - "8869:8069"   
       - "8872:8072"  
